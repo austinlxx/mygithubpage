@@ -25,7 +25,9 @@ str=str.substring(str.indexOf("/") + 1);
 addressURL=str.substring(str.indexOf("/") + 1);
 $.getJSON(url, function(data) {
 var entry=data.feed.entry[0];
-$('#addressURL').prepend(entry["gsx$"+addressURL].$t);
+var text = entry["gsx$"+addressURL].$t;
+text = text.replace(/(?:\r\n|\r|\n)/g, '<br />');
+$('#addressURL').prepend(text);
 }
 
 );
