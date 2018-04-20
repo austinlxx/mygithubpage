@@ -224,5 +224,6 @@ transform: scale(1.1);
 }
 #addressURL>br {
 line-height: 24px;
+font-size: 14px;
 }
 </style>
