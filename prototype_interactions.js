@@ -25,10 +25,18 @@ addressURL = str.substring(str.indexOf("/") + 1);
 $.getJSON(url, function (data) {
 	var interactions = data.feed.entry[0];
 	var interactionText = interactions["gsx$" + addressURL].$t;
-	interactionText = interactionText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+	if (interactionText == "") {
+		interactionText = "No interactions available.";
+	} else {
+		interactionText = interactionText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+	}
 	var notes = data.feed.entry[1];
 	var notesText = notes["gsx$" + addressURL].$t;
-	notesText = notesText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+	if (notesText == "") {
+		notesText = "No notes available.";
+	} else {
+		notesText = notesText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+	}
 	$('#interactions').prepend(interactionText);
 	$('#notes').prepend(notesText);
 }
