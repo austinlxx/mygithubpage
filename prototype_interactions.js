@@ -23,10 +23,12 @@ str = str.substring(str.indexOf("/") + 1);
 str = str.substring(str.indexOf("/") + 1);
 addressURL = str.substring(str.indexOf("/") + 1);
 $.getJSON(url, function(data) {
-		var entry = data.feed.entry[0];
-		var text = entry["gsx$" + addressURL].$t;
-		text = text.replace(/(?:\r\n|\r|\n)/g, '<br />');
-		$('#addressURL').prepend(text);
+		var interactions = data.feed.entry[0];
+		var interactionText = entry["gsx$" + addressURL].$t;
+		interactionText = interactionText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+		var notes = data.feed.entry[1];
+		var notesText = entry["gsx$" + addressURL].$t;
+		notesText = notesText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+		$('#addressURL').append(notesText);
 	}
-
 );
