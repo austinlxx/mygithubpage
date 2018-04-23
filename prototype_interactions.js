@@ -1,13 +1,13 @@
-$("#bubbleButton").click(function() {
-		if ($('#bubble').is(':hidden')) {
-			$("#bubble").css("display", "block");
-		} else {
-			$("#bubble").css("display", "none");
-		}
+$("#bubbleButton").click(function () {
+	if ($('#bubble').is(':hidden')) {
+		$("#bubble").css("display", "block");
+	} else {
+		$("#bubble").css("display", "none");
 	}
+}
 
 );
-$(".conarrative-button-close").click(function() {
+$(".conarrative-button-close").click(function () {
 	if ($('#bubble').is(':hidden')) {
 		$("#bubble").css("display", "block");
 	} else {
@@ -22,13 +22,14 @@ var str = window.location.pathname;
 str = str.substring(str.indexOf("/") + 1);
 str = str.substring(str.indexOf("/") + 1);
 addressURL = str.substring(str.indexOf("/") + 1);
-$.getJSON(url, function(data) {
-		var interactions = data.feed.entry[0];
-		var interactionText = entry["gsx$" + addressURL].$t;
-		interactionText = interactionText.replace(/(?:\r\n|\r|\n)/g, '<br />');
-		var notes = data.feed.entry[1];
-		var notesText = entry["gsx$" + addressURL].$t;
-		notesText = notesText.replace(/(?:\r\n|\r|\n)/g, '<br />');
-		$('#addressURL').append(notesText);
-	}
+$.getJSON(url, function (data) {
+	var interactions = data.feed.entry[0];
+	var interactionText = interactions["gsx$" + addressURL].$t;
+	interactionText = interactionText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+	var notes = data.feed.entry[1];
+	var notesText = notes["gsx$" + addressURL].$t;
+	notesText = notesText.replace(/(?:\r\n|\r|\n)/g, '<br />');
+	$('#interactions').prepend(interactionText);
+	$('#notes').prepend(notesText);
+}
 );
