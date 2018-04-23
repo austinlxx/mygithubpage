@@ -100,7 +100,8 @@ a.conarrative-button-close {
 	background: none;
 	position: relative;
 	overflow: hidden;
-	display: block
+	display: block;
+	font-size: 14px;
 }
 
 .conarrative-button-container .conarrative-controls .conarrative-controls-help-message {
