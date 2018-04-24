@@ -230,6 +230,12 @@ a.conarrative-button-close:after {
 	display: none
 }
 
+div#interactions {
+    padding-bottom: 12px;
+	border-bottom: 1px solid #a7b4be;
+	margin-bottom: 16px;
+}
+
 a#flashInteractions {
     margin-left: 12px;
     font-size: 12px;
