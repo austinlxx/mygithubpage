@@ -112,7 +112,8 @@ a.conarrative-button-close {
 	padding: 0;
 	text-transform: none;
 	font-size: 14px;
-	font-weight: 600
+	font-weight: 600;
+	display: inline-flex;
 }
 
 .conarrative-button-container .conarrative-controls .conarrative-controls-step {
@@ -179,7 +180,6 @@ a.conarrative-button-close {
 	color: #4C545B;
 	text-align: left;
 	transition: all 0.2s linear;
-	user-select: none;
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased
 }
@@ -230,8 +230,9 @@ a.conarrative-button-close:after {
 	display: none
 }
 
-div#interactions {
-    padding-bottom: 12px;
-	border-bottom: 1px solid #a7b4be;
-	margin-bottom: 16px;
+a#flashInteractions {
+    margin-left: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2585ec;
 }
