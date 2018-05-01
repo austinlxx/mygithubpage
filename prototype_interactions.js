@@ -82,3 +82,9 @@ $(".poweronaction").click(function() {
 	$(".selectedrectangle01").css("background","#A4D05F");
 	$(".selectedrectangle02").css("background","#A4D05F");
 });
+
+// Close any dialogs if clicking on the artboard
+$("layoutcontainer").click(function() {
+	$(".dialog01").css("opacity","0");
+	$(".dialog02").css("opacity","0");
+});
