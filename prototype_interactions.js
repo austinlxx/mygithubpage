@@ -72,3 +72,13 @@ $.getJSON(url, function (data) {
 	$('#notes').prepend(notesText);
 }
 );
+
+// Powering off Guests
+$(".poweroffaction").click(function() {
+	$(".selectedrectangle01").css("background","#D8DDDE");
+	$(".selectedrectangle02").css("background","#D8DDDE");
+});
+$(".poweronaction").click(function() {
+	$(".selectedrectangle01").css("background","#A4D05F");
+	$(".selectedrectangle02").css("background","#A4D05F");
+});
